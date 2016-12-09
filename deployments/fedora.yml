@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: fedora
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        component: repository
+    spec:
+      containers:
+        - name: fedora
+          image: mitlibraries/fedora
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+            - containerPort: 61613
+              name: stomp
+              protocol: TCP

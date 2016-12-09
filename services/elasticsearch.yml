@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: elasticsearch
+spec:
+  type: LoadBalancer
+  selector:
+    component: elasticsearch
+  ports:
+    - name: http
+      port: 9200
+      protocol: TCP

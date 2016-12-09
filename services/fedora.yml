@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: fedora
+spec:
+  type: LoadBalancer
+  selector:
+    component: repository
+  ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+    - name: stomp
+      port: 61613
+      protocol: TCP

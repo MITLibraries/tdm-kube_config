@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: pit
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        component: worker
+    spec:
+      containers:
+        - name: pit
+          image: gcr.io/mitlib-adit/pit:0.0.1.1
+          args:
+            - run
+            - '--index-host'
+            - $(ELASTICSEARCH_SERVICE_HOST)
+            - '--broker-host'
+            - $(FEDORA_SERVICE_HOST)
