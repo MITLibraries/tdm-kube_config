@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: aditapi
+spec:
+  type: LoadBalancer
+  selector:
+    component: aditapi
+  ports:
+    - name: http
+      port: 4000
+      protocol: TCP
