@@ -12,6 +12,12 @@ spec:
       containers:
       - name: aditapi
         image: gcr.io/mitlib-adit/aditapi:0.1
+        env:
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: postgres
+                key: password
         ports:
           - containerPort: 4000
             name: http
