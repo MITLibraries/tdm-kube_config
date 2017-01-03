@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: pit
-          image: gcr.io/mitlib-adit/pit:0.0.1.4
+          image: gcr.io/mitlib-adit/pit:0.0.1.5
           args:
             - run
             - '--index-host'
