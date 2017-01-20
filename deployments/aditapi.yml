@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: aditapi
-        image: gcr.io/mitlib-adit/aditapi:0.1
+        image: gcr.io/mitlib-adit/aditapi:0.3
         env:
           - name: POSTGRES_PASSWORD
             valueFrom:
