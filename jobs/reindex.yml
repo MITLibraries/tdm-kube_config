@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: reindex
+spec:
+  containers:
+    - name: reindex
+      image: gcr.io/mitlib-adit/pit:0.2.0
+      args:
+        - reindex
+        - "http://$(FEDORA_SERVICE_HOST):$(FEDORA_SERVICE_PORT)/fcrepo/rest/theses"
+        - '--index-host'
+        - $(ELASTICSEARCH_SERVICE_HOST)
+        - '--index-port'
+        - $(ELASTICSEARCH_SERVICE_PORT)
+  restartPolicy: Never
