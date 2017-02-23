@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-proxy
+spec:
+  type: LoadBalancer
+  selector:
+    component: proxy
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
