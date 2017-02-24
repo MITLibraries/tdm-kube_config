@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: gcr.io/mitlib-adit/nginx-proxy:0.0.1.3
+          image: gcr.io/mitlib-adit/nginx-proxy:0.1.0
           env:
             - name: FEDORA_USER
               valueFrom:
