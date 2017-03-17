@@ -8,10 +8,21 @@ spec:
     metadata:
       labels:
         component: elasticsearch
+      annotations:
+        pod.beta.kubernetes.io/init-containers: '[
+          {
+            "name": "sysctl",
+            "image": "busybox",
+            "command": ["sysctl", "-w", "vm.max_map_count=262144"],
+            "securityContext": {
+              "privileged": true
+            }
+          }
+        ]'
     spec:
       containers:
       - name: elasticsearch
-        image: elasticsearch:2
+        image: gcr.io/mitlib-adit/elastic:0.0.1
         ports:
           - containerPort: 9200
             name: http
