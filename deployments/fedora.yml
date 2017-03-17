@@ -11,7 +11,10 @@ spec:
     spec:
       containers:
         - name: fedora
-          image: mitlibraries/fedora
+          image: gcr.io/mitlib-adit/fedora:4.7.0.1
+          volumeMounts:
+            - mountPath: /fcrepo4-data
+              name: fedora-store
           ports:
             - containerPort: 8080
               name: http
@@ -19,3 +22,8 @@ spec:
             - containerPort: 61613
               name: stomp
               protocol: TCP
+      volumes:
+        - name: fedora-store
+          gcePersistentDisk:
+            pdName: fedora-store
+            fsType: ext4
