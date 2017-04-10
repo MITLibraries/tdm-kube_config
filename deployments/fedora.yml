@@ -22,6 +22,12 @@ spec:
             - containerPort: 61613
               name: stomp
               protocol: TCP
+          resources:
+            requests:
+              memory: "2048M"
+            limits:
+              memory: "3072M"
+
       volumes:
         - name: fedora-store
           gcePersistentDisk:

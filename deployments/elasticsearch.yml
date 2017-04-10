@@ -27,3 +27,8 @@ spec:
           - containerPort: 9200
             name: http
             protocol: TCP
+        resources:
+          requests:
+            memory: "2048M"
+          limits:
+            memory: "3072M"
