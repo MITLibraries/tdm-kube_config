@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: reindex
-      image: gcr.io/mitlib-adit/pit:0.2.0
+      image: gcr.io/mitlib-adit/pit:0.2.0.6
       args:
         - reindex
         - "http://$(FEDORA_SERVICE_HOST):$(FEDORA_SERVICE_PORT)/fcrepo/rest/theses"

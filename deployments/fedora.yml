@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: fedora
-          image: gcr.io/mitlib-adit/fedora:4.7.0.1
+          image: gcr.io/mitlib-adit/fedora:4.7.0.2
           volumeMounts:
             - mountPath: /fcrepo4-data
               name: fedora-store
